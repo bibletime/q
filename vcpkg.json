@@ -6,6 +6,8 @@
       "name": "qtbase",
       "features": ["icu"]
     },
+    "qtdeclarative",
+    "qtsvg",
     "zlib"
   ]
 }

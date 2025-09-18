@@ -16,18 +16,17 @@ jobs:
 
     - uses: actions/checkout@v5
 
-    - name: Install dependencies from vcpkg
-      run: vcpkg install
+    - name: Setup vcpkg
+      uses: lukka/run-vcpkg@v11
 
     - name: Install NSIS
       run: choco install nsis
 
     - name: Build
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        cmake --build .
+      uses: lukka/run-cmake@v10
+      with:
+        configurePreset: 'msbuild-vcpkg'
+        buildPreset: 'msbuild-vcpkg'
 
     - name: Save BibleTime Installer
       uses: actions/upload-artifact@v4
