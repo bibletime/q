@@ -13,12 +13,6 @@ jobs:
     env:
       ICU_ROOT: ${{ github.workspace }}/icu
     steps:
-
     - uses: actions/checkout@v5
-      with:
-        repository: qt/qtbase
-        ref: v6.9.2
-        path: qtbase
-
     - name: Install dependencies
       run: vcpkg install
