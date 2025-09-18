@@ -12,6 +12,7 @@ jobs:
     runs-on: [windows-2022]
 
     steps:
+
     - name: Checkout qtdeclarative
       uses: actions/checkout@v5
       with:
@@ -30,7 +31,6 @@ jobs:
         Remove-Item -Path qtbase_build
         Remove-Item -Path qtbase
 
-    steps:
     - name: Checkout qtdeclarative
       uses: actions/checkout@v5
       with:
@@ -49,7 +49,6 @@ jobs:
         Remove-Item -Path qtdeclarative_build
         Remove-Item -Path qtdeclarative
 
-    steps:
     - name: Checkout qtsvg
       uses: actions/checkout@v5
       with:
