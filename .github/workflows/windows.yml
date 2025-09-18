@@ -13,6 +13,25 @@ jobs:
     env:
       ICU_ROOT: ${{ github.workspace }}/icu
     steps:
+
     - uses: actions/checkout@v5
-    - name: Install dependencies
+
+    - name: Install dependencies from vcpkg
       run: vcpkg install
+
+    - name: Install NSIS
+      run: choco install nsis
+
+    - name: Build
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        cmake --build .
+
+    - name: Save BibleTime Installer
+      uses: actions/upload-artifact@v2
+      with:
+        name: bibletime-x64-installer
+        path: build\bibletime-prefix\src\bibletime-build\BibleTime-${{env.BT_VERSION}}-win64.exe
+        retention-days: 5
