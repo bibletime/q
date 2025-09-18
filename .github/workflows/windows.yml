@@ -30,8 +30,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        ../qtbase/configure -icu
+        ../qtbase/configure -icu -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -48,8 +47,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        ../qtdeclarative/configure
+        ../qtdeclarative/configure -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -66,8 +64,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-        ../qtsvg/configure
+        ../qtsvg/configure -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
