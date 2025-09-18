@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: Checkout qtdeclarative
       uses: actions/checkout@v5
+      with:
         repository: qt/qtbase
         ref: v6.9.2
         path: qtbase
@@ -32,6 +33,7 @@ jobs:
     steps:
     - name: Checkout qtdeclarative
       uses: actions/checkout@v5
+      with:
         repository: qt/qtdeclarative
         ref: v6.9.2
         path: qtdeclarative
@@ -50,6 +52,7 @@ jobs:
     steps:
     - name: Checkout qtsvg
       uses: actions/checkout@v5
+      with:
         repository: qt/qtsvg
         ref: v6.9.2
         path: qtsvg
