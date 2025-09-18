@@ -30,7 +30,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        ../qtbase/configure -icu -- -G "Visual Studio 17 2022" -A x64 -T clang-cl
+        ../qtbase/configure -icu -- -G "Visual Studio 17 2022" -A x64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -47,7 +47,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        ../qtdeclarative/configure -- -G "Visual Studio 17 2022" -A x64 -T clang-cl
+        ../qtdeclarative/configure -- -G "Visual Studio 17 2022" -A x64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -64,7 +64,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        ../qtsvg/configure -- -G "Visual Studio 17 2022" -A x64 -T clang-cl
+        ../qtsvg/configure -- -G "Visual Studio 17 2022" -A x64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
