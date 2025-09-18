@@ -30,7 +30,7 @@ jobs:
         cmake --build .
 
     - name: Save BibleTime Installer
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: bibletime-x64-installer
         path: build\bibletime-prefix\src\bibletime-build\BibleTime-${{env.BT_VERSION}}-win64.exe
