@@ -12,43 +12,55 @@ jobs:
     runs-on: [windows-2022]
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - name: Checkout qtdeclarative
+      uses: actions/checkout@v5
+        repository: qt/qtbase
+        ref: v6.9.2
+        path: qtbase
 
-    - name: Download qtbase
+    - name: Install qtbase
       run: |
-        Invoke-WebRequest -Uri https://github.com/qt/qtbase/archive/refs/tags/v6.9.2.zip -OutFile qtbase.zip
-        Expand-Archive -Path qtbase.zip -DestinationPath .
-        Remove-Item qtbase.zip
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        ../qtbase-6.9.2/configure -icu
+        ../qtbase/configure -icu
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
         Remove-Item -Path qtbase_build
-        Remove-Item -Path qtbase-6.9.2
+        Remove-Item -Path qtbase
 
-        Invoke-WebRequest -Uri https://github.com/qt/qtdeclarative/archive/refs/tags/v6.9.2.zip -OutFile qtdeclarative.zip
-        Expand-Archive -Path qtdeclarative.zip -DestinationPath .
-        Remove-Item qtdeclarative.zip
+    steps:
+    - name: Checkout qtdeclarative
+      uses: actions/checkout@v5
+        repository: qt/qtdeclarative
+        ref: v6.9.2
+        path: qtdeclarative
+
+    - name: Install qtdeclarative
+      run: |
+        New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        ../qtdeclarative-6.9.2/configure
+        ../qtdeclarative/configure
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
         Remove-Item -Path qtdeclarative_build
-        Remove-Item -Path qtdeclarative-6.9.2
+        Remove-Item -Path qtdeclarative
 
-        Invoke-WebRequest -Uri https://github.com/qt/qtsvg/archive/refs/tags/v6.9.2.zip -OutFile qtsvg.zip
-        Expand-Archive -Path qtsvg.zip -DestinationPath .
-        Remove-Item qtsvg.zip
-        New-Item -ItemType Directory -Path qtdeclarative_build
+    steps:
+    - name: Checkout qtsvg
+      uses: actions/checkout@v5
+        repository: qt/qtsvg
+        ref: v6.9.2
+        path: qtsvg
+
+    - name: Install qtsvg
+      run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        ../qtsvg-6.9.2/configure -icu
+        ../qtsvg/configure -icu
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
         Remove-Item -Path qtsvg_build
-        Remove-Item -Path qtsvg-6.9.2
+        Remove-Item -Path qtsvg
