@@ -14,59 +14,11 @@ jobs:
       ICU_ROOT: ${{ github.workspace }}/icu
     steps:
 
-    - name: Download and install ICU
-      run: |
-        Invoke-WebRequest -Uri https://github.com/unicode-org/icu/releases/download/release-76-rc/icu4c-76_1rc-Win64-MSVC2022.zip -OutFile icu.zip
-        Expand-Archive -Path icu.zip -DestinationPath icu
-        Remove-Item icu.zip
-
     - uses: actions/checkout@v5
       with:
         repository: qt/qtbase
         ref: v6.9.2
         path: qtbase
 
-    - name: Install qtbase
-      run: |
-        New-Item -ItemType Directory -Path qtbase_build
-        Set-Location qtbase_build
-        ../qtbase/configure -icu -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
-        cmake --build . --parallel
-        cmake --install .
-        Set-Location ..
-        Remove-Item -Path qtbase_build
-        Remove-Item -Path qtbase
-
-    - uses: actions/checkout@v5
-      with:
-        repository: qt/qtdeclarative
-        ref: v6.9.2
-        path: qtdeclarative
-
-    - name: Install qtdeclarative
-      run: |
-        New-Item -ItemType Directory -Path qtdeclarative_build
-        Set-Location qtdeclarative_build
-        ../qtdeclarative/configure -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
-        cmake --build . --parallel
-        cmake --install .
-        Set-Location ..
-        Remove-Item -Path qtdeclarative_build
-        Remove-Item -Path qtdeclarative
-
-    - uses: actions/checkout@v5
-      with:
-        repository: qt/qtsvg
-        ref: v6.9.2
-        path: qtsvg
-
-    - name: Install qtsvg
-      run: |
-        New-Item -ItemType Directory -Path qtsvg_build
-        Set-Location qtsvg_build
-        ../qtsvg/configure -- -DCMAKE_TOOLCHAIN_FILE="c:/vcpkg/scripts/buildsystems/vcpkg.cmake" -G Ninja
-        cmake --build . --parallel
-        cmake --install .
-        Set-Location ..
-        Remove-Item -Path qtsvg_build
-        Remove-Item -Path qtsvg
+    - name: Install dependencies
+      run: vcpkg install

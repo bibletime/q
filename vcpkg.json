@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    {
+      "name": "qtbase",
+      "features": ["icu"]
+    }
+  ]
+}
