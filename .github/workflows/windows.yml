@@ -17,8 +17,20 @@ jobs:
 
     - name: Download qtbase
       run: |
-        Invoke-WebRequest -Uri https://github.com/qt/qtbase/archive/refs/tags/v6.9.2.zip -OutFile qtsrc.zip
-        Expand-Archive -Path qtsrc.zip
-        mkdir qtbuild
-        cd qtbuild
-        ../qtsrc/configure -icu
+        Invoke-WebRequest -Uri https://github.com/qt/qtbase/archive/refs/tags/v6.9.2.zip -OutFile qtbase.zip
+        Expand-Archive -Path qtbase.zip
+        Remove-Item qtbase.zip
+        Invoke-WebRequest -Uri https://github.com/qt/qtdeclarative/archive/refs/tags/v6.9.2.zip -OutFile qtdeclarative.zip
+        Expand-Archive -Path qtdeclarative.zip
+        Remove-Item qtdeclarative.zip
+        Invoke-WebRequest -Uri https://github.com/qt/qtsvg/archive/refs/tags/v6.9.2.zip -OutFile qtsvg.zip
+        Expand-Archive -Path qtsvg.zip
+        Remove-Item qtsvg.zip
+
+        Get-ChildItem -Path qtbase
+
+        New-Item -ItemType Directory -Path qtbase_build
+        New-Item -ItemType Directory -Path qtdeclarative_build
+        New-Item -ItemType Directory -Path qtsvg_build
+        Set-Location qtbase_build
+        ../qtbase/configure -icu
