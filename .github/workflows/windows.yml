@@ -18,6 +18,8 @@ jobs:
 
     - name: Setup vcpkg
       uses: lukka/run-vcpkg@v11
+      with:
+        vcpkgGitCommitId: '2025.08.27'
 
     - name: Install NSIS
       run: choco install nsis
