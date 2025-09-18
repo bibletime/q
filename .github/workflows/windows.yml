@@ -13,8 +13,13 @@ jobs:
 
     steps:
 
-    - name: Checkout qtdeclarative
-      uses: actions/checkout@v5
+    - name: Download and install ICU
+      run: |
+        Invoke-WebRequest -Uri https://github.com/unicode-org/icu/releases/download/release-76-rc/icu4c-76_1rc-Win64-MSVC2022.zip -OutFile icu.zip
+        Expand-Archive -Path icu.zip -DestinationPath icu
+        Remove-Item icu.zip
+
+    - uses: actions/checkout@v5
       with:
         repository: qt/qtbase
         ref: v6.9.2
@@ -24,15 +29,14 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        ../qtbase/configure -icu
+        ../qtbase/configure -icu -I ../icu/include -L ../icu/lib64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
         Remove-Item -Path qtbase_build
         Remove-Item -Path qtbase
 
-    - name: Checkout qtdeclarative
-      uses: actions/checkout@v5
+    - uses: actions/checkout@v5
       with:
         repository: qt/qtdeclarative
         ref: v6.9.2
@@ -42,15 +46,14 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        ../qtdeclarative/configure
+        ../qtdeclarative/configure -I ../icu/include -L ../icu/lib64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
         Remove-Item -Path qtdeclarative_build
         Remove-Item -Path qtdeclarative
 
-    - name: Checkout qtsvg
-      uses: actions/checkout@v5
+    - uses: actions/checkout@v5
       with:
         repository: qt/qtsvg
         ref: v6.9.2
@@ -60,7 +63,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        ../qtsvg/configure -icu
+        ../qtsvg/configure -I ../icu/include -L ../icu/lib64
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
