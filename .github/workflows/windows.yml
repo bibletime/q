@@ -17,20 +17,40 @@ jobs:
 
     - name: Download qtbase
       run: |
+        Set-PSDebug -Trace 1
+
         Invoke-WebRequest -Uri https://github.com/qt/qtbase/archive/refs/tags/v6.9.2.zip -OutFile qtbase.zip
-        Expand-Archive -Path qtbase.zip
+        Expand-Archive -Path qtbase.zip -DestinationPath .
         Remove-Item qtbase.zip
-        Invoke-WebRequest -Uri https://github.com/qt/qtdeclarative/archive/refs/tags/v6.9.2.zip -OutFile qtdeclarative.zip
-        Expand-Archive -Path qtdeclarative.zip
-        Remove-Item qtdeclarative.zip
-        Invoke-WebRequest -Uri https://github.com/qt/qtsvg/archive/refs/tags/v6.9.2.zip -OutFile qtsvg.zip
-        Expand-Archive -Path qtsvg.zip
-        Remove-Item qtsvg.zip
-
-        Get-ChildItem -Path qtbase
-
         New-Item -ItemType Directory -Path qtbase_build
+        Set-Location qtbase_build
+        ../qtbase-6.9.2/configure -icu
+        cmake --build . --parallel
+        cmake --install .
+        Set-Location ..
+        Remove-Item -Path qtbase_build
+        Remove-Item -Path qtbase-6.9.2
+
+        Invoke-WebRequest -Uri https://github.com/qt/qtdeclarative/archive/refs/tags/v6.9.2.zip -OutFile qtdeclarative.zip
+        Expand-Archive -Path qtdeclarative.zip -DestinationPath .
+        Remove-Item qtdeclarative.zip
+        Set-Location qtdeclarative_build
+        ../qtdeclarative-6.9.2/configure
+        cmake --build . --parallel
+        cmake --install .
+        Set-Location ..
+        Remove-Item -Path qtdeclarative_build
+        Remove-Item -Path qtdeclarative-6.9.2
+
+        Invoke-WebRequest -Uri https://github.com/qt/qtsvg/archive/refs/tags/v6.9.2.zip -OutFile qtsvg.zip
+        Expand-Archive -Path qtsvg.zip -DestinationPath .
+        Remove-Item qtsvg.zip
         New-Item -ItemType Directory -Path qtdeclarative_build
         New-Item -ItemType Directory -Path qtsvg_build
-        Set-Location qtbase_build
-        ../qtbase/configure -icu
+        Set-Location qtsvg_build
+        ../qtsvg-6.9.2/configure -icu
+        cmake --build . --parallel
+        cmake --install .
+        Set-Location ..
+        Remove-Item -Path qtsvg_build
+        Remove-Item -Path qtsvg-6.9.2
