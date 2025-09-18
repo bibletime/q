@@ -29,7 +29,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        ../qtbase/configure -icu ICU_ROOT=../icu
+        ../qtbase/configure -icu "ICU_ROOT=$((get-Item ../icu).FullName)"
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -46,7 +46,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        ../qtdeclarative/configure ICU_ROOT=../icu
+        ../qtdeclarative/configure "ICU_ROOT=$((get-Item ../icu).FullName)"
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -63,7 +63,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        ../qtsvg/configure ICU_ROOT=../icu
+        ../qtsvg/configure "ICU_ROOT=$((get-Item ../icu).FullName)"
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
