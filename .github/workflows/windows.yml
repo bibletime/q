@@ -10,7 +10,8 @@ jobs:
   Windows:
     name: build-windows
     runs-on: [windows-2022]
-
+    env:
+      ICU_ROOT: ${{ github.workspace }}/icu
     steps:
 
     - name: Download and install ICU
@@ -29,7 +30,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
-        ../qtbase/configure -icu "ICU_ROOT=$((get-Item ../icu).FullName)"
+        ../qtbase/configure -icu
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -46,7 +47,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
-        ../qtdeclarative/configure "ICU_ROOT=$((get-Item ../icu).FullName)"
+        ../qtdeclarative/configure
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
@@ -63,7 +64,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
-        ../qtsvg/configure "ICU_ROOT=$((get-Item ../icu).FullName)"
+        ../qtsvg/configure
         cmake --build . --parallel
         cmake --install .
         Set-Location ..
