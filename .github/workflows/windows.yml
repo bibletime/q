@@ -30,6 +30,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtbase_build
         Set-Location qtbase_build
+        "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
         ../qtbase/configure -icu
         cmake --build . --parallel
         cmake --install .
@@ -47,6 +48,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtdeclarative_build
         Set-Location qtdeclarative_build
+        "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
         ../qtdeclarative/configure
         cmake --build . --parallel
         cmake --install .
@@ -64,6 +66,7 @@ jobs:
       run: |
         New-Item -ItemType Directory -Path qtsvg_build
         Set-Location qtsvg_build
+        "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
         ../qtsvg/configure
         cmake --build . --parallel
         cmake --install .
