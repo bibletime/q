@@ -29,6 +29,7 @@ jobs:
       with:
         configurePreset: 'msbuild-vcpkg'
         buildPreset: 'msbuild-vcpkg'
+        buildPresetAdditionalArgs: "['--config Release']"
 
     - name: Save BibleTime Installer
       uses: actions/upload-artifact@v4
