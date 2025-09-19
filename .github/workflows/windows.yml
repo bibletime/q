@@ -11,7 +11,7 @@ jobs:
     name: build-windows
     runs-on: [windows-2022]
     env:
-      VCPKG_DEFAULT_TRIPLET: x64-windows-release
+      VCPKG_DEFAULT_TRIPLET: x64-windows-rel
       VCPKG_DISABLE_METRICS: 1
       ICU_ROOT: ${{ github.workspace }}/icu
     steps:
