@@ -1,5 +1,43 @@
 project(bibletime-win)
 cmake_minimum_required(VERSION 3.17)
+
+######################################################
+# Find packages:
+#
+FIND_PACKAGE(Qt6 6.7 REQUIRED COMPONENTS
+    Core
+    Gui
+    LinguistTools
+    Widgets
+    Xml
+    Test
+    Svg
+    PrintSupport
+    Qml
+    Quick
+    QuickWidgets
+)
+MESSAGE(STATUS "Found Qt6: ${Qt6_VERSION}")
+GET_TARGET_PROPERTY(QT_ENABLED_PRIVATE_FEATURES Qt6::Core
+    QT_ENABLED_PRIVATE_FEATURES)
+IF("icu" IN_LIST QT_ENABLED_PRIVATE_FEATURES)
+    MESSAGE(STATUS "Qt6 found seems to have required ICU support.")
+ELSE()
+    MESSAGE(FATAL_ERROR "Qt6 found seems to lack required ICU support!")
+ENDIF()
+FIND_PACKAGE(PkgConfig REQUIRED)
+add_executable(asdf main.cpp)
+target_link_libraries(asdf PRIVATE
+    Qt::Network
+    Qt::PrintSupport
+    Qt::Quick
+    Qt::QuickWidgets
+    Qt::Svg
+    Qt::Widgets
+    Qt::Xml
+)
+return()
+
 include(ExternalProject)
 Set(CMAKE_CONFIGURATION_TYPES "Release" CACHE STRING "" FORCE)
 Set(BT_DOC_REV v3.1.1)
