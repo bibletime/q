@@ -9,6 +9,10 @@
     },
     "qtdeclarative",
     "qtsvg",
+    {
+      "name": "qttools",
+      "features": ["linguist"]
+    },
     "zlib"
   ]
 }
