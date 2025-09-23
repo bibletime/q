@@ -19,7 +19,7 @@ body:
       should be directed to the appropriate resource providers, not this issue tracker.
 
 - type: markdown
-  id: descriptive_notice
+  id: feature_request_notice
   attributes:
     value: |
       :warning: Feature Request Notice
