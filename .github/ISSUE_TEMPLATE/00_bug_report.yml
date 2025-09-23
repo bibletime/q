@@ -24,7 +24,7 @@ body:
   attributes:
     label: Please confirm the following
     options:
-      - label: I have read and respect the notice above.
+      - label: I have read and respect the above notice(s).
         required: true
   validations:
     required: true
