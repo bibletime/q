@@ -10,14 +10,6 @@ body:
   id: notice
   attributes:
     value: |
-      :warning: This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
-        * feature requests for works such as Bibles, commentaries, books, lexicons etc, or their metadata,
-        * requests relating to adding, removing or updating new content
-
-      should be directed to the appropriate content providers, not this issue tracker.
-
-      ----
-
       :information_source: Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future. 
 
       We appreciate all feature suggestions and will consider them for future planning when resources allow. In the meantime, we encourage users to contribute code to help make desired features a reality. 
@@ -27,9 +19,9 @@ body:
 - type: checkboxes
   id: i_have_read_and_i_agree
   attributes:
-    label: Acknowledgment
+    label: Acknowledgments
     options:
-      - label: I have read and respect the notice that was displayed when I submitted this form.
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
         required: true
   validations:
     required: true

@@ -6,23 +6,12 @@ labels:
 assignees: []
 body:
 
-- type: markdown
-  id: notice
-  attributes:
-    value: |
-      :warning: This form is for reporting bugs and technical issues specific to the BibleTime software itself. Issues that are **NOT** related to the software, such as:
-        * errors in works such as Bibles, commentaries, books, lexicons etc, or their metadata,
-        * requests relating to adding, removing or updating new content,
-        * questions about such content or theology
-
-      should be directed to the appropriate content providers, not this issue tracker.
-
 - type: checkboxes
   id: i_have_read_and_i_agree
   attributes:
-    label: Acknowledgment
+    label: Acknowledgments
     options:
-      - label: I have read and respect the [notice](https://bibletime.info/notice) that was displayed when I submitted this form.
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
         required: true
   validations:
     required: true

@@ -6,18 +6,13 @@ labels:
 assignees: []
 body:
 
-- type: markdown
-  id: notice
-  attributes:
-    value: |
-      :warning: This form is for questions specific to the BibleTime software. Any questions regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
 
 - type: checkboxes
   id: i_have_read_and_i_agree
   attributes:
-    label: Acknowledgment
+    label: Acknowledgments
     options:
-      - label: I have read and respect the notice that was displayed when I submitted this form.
+      - label: I understand this form is for software feedback only, not for issues related to specific works like Bibles, commentaries, or books, nor for content provider-related concerns.
         required: true
   validations:
     required: true
