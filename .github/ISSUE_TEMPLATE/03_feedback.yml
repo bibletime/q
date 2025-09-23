@@ -1,0 +1,32 @@
+name: Feedback
+description: For giving thanks, general discussion etc.
+title: '[FEEDBACK] '
+labels:
+  - 'type: Feedback'
+assignees: []
+body:
+
+- type: markdown
+  id: descriptive_notice
+  attributes:
+    value: |
+      ## :warning: **Please Read This Carefully Before Submitting Feedback**
+
+      This form is for feedback specific to the BibleTime software. Any feedback regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Please confirm the following
+    options:
+      - label: I have read and respect the above notice(s).
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: feedback
+  attributes:
+    label: Feedback
+  validations:
+    required: true

@@ -1,0 +1,38 @@
+name: Question
+description: Request help solving a problem or information about BibleTime
+title: '[QUESTION] '
+labels:
+  - 'type: QUESTION'
+assignees: []
+body:
+
+- type: markdown
+  id: descriptive_notice
+  attributes:
+    value: |
+      ## :warning: **Please Read This Carefully Before Submitting a Question**
+
+      This form is for questions specific to the BibleTime software. Any questions regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
+
+- type: checkboxes
+  id: i_have_read_and_i_agree
+  attributes:
+    label: Please confirm the following
+    options:
+      - label: I have read and respect the above notice(s).
+        required: true
+  validations:
+    required: true
+
+- type: textarea
+  id: question
+  attributes:
+    label: Question
+    description: >
+      Please include context relevant to the question, e.g. what are you attempting to achieve or what have you done so far?
+    placeholder: |
+      How to ... ?
+      What is the ... ?
+      Is it possible to ... ?
+  validations:
+    required: true

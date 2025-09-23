@@ -1,6 +1,6 @@
 name: Enhancement proposal
 description: Suggest an idea or new feature for BibleTime
-title: "[ENHANCEMENT] "
+title: '[ENHANCEMENT] '
 labels:
   - 'type: ENHANCEMENT'
 assignees: []
@@ -13,10 +13,10 @@ body:
       ## :warning: **Please Read This Carefully Before Submitting an Enhancement Proposal**
 
       This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
-        * feature requests for works such as Bible translations, commentaries, books, lexicons etc, or their metadata,
+        * feature requests for works such as Bibles, commentaries, books, lexicons etc, or their metadata,
         * requests relating to adding, removing or updating new content
 
-      should be directed to the appropriate resource providers, not this issue tracker.
+      should be directed to the appropriate content providers, not this issue tracker.
 
 - type: markdown
   id: feature_request_notice
