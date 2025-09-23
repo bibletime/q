@@ -22,7 +22,7 @@ body:
   attributes:
     label: Acknowledgment
     options:
-      - label: I have read and respect the notice that was displayed when I submitted this form.
+      - label: I have read and respect the [notice](https://bibletime.info/notice) that was displayed when I submitted this form.
         required: true
   validations:
     required: true
