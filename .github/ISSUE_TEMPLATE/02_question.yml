@@ -10,16 +10,16 @@ body:
   id: descriptive_notice
   attributes:
     value: |
-      ## :warning: **Please Read This Carefully Before Submitting a Question**
+      ## :warning: **Notice**
 
       This form is for questions specific to the BibleTime software. Any questions regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
 
 - type: checkboxes
   id: i_have_read_and_i_agree
   attributes:
-    label: Please confirm the following
+    label: Acknowledgment
     options:
-      - label: I have read and respect the above notice(s).
+      - label: I have read and respect the notice that was displayed when I submitted this form.
         required: true
   validations:
     required: true

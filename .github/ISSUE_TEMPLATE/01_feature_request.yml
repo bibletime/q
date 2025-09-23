@@ -10,7 +10,7 @@ body:
   id: descriptive_notice
   attributes:
     value: |
-      ## :warning: **Please Read This Carefully Before Submitting an Enhancement Proposal**
+      ## :warning: **Notice**
 
       This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
         * feature requests for works such as Bibles, commentaries, books, lexicons etc, or their metadata,
@@ -33,9 +33,9 @@ body:
 - type: checkboxes
   id: i_have_read_and_i_agree
   attributes:
-    label: Please confirm the following
+    label: Acknowledgment
     options:
-      - label: I have read and respect the above notice(s).
+      - label: I have read and respect the notice that was displayed when I submitted this form.
         required: true
   validations:
     required: true
