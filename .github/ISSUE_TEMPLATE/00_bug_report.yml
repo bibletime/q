@@ -71,7 +71,8 @@ body:
   attributes:
     label: BibleTime version
     description: >
-      The version of BibleTime the which manifested the issue, e.g. 3.1.0
+      The version of BibleTime the which manifested the issue.
+    placeholder: e.g. 3.1.0
   validations:
     required: true
 
@@ -80,7 +81,6 @@ body:
   attributes:
     label: How did you install BibleTime?
     options:
-      - n/a
       - Package provided by operating system
       - Binary installer or package downloaded from GitHub
       - Snap package
@@ -95,7 +95,8 @@ body:
     label: OS version
     description: >
       The name and version of the operating system on which the issue was
-      encountered, e.g. Debian 13, Ubuntu 24.04, Windows 11
+      encountered.
+    placeholder: e.g. Debian 13, Ubuntu 24.04, Windows 11
   validations:
     required: true
 
