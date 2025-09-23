@@ -12,16 +12,12 @@ body:
     value: |
       :warning: **Please Read This Carefully Before Submitting an Issue**
 
-      This form is for reporting bugs and technical issues specific to the
-      BibleTime software itself. Issues that are **NOT** related to the
-      software, such as:
-        * errors in works such as Bible translations, commentaries, books,
-          lexicons etc, or their metadata,
+      This form is for reporting bugs and technical issues specific to the BibleTime software itself. Issues that are **NOT** related to the software, such as:
+        * errors in works such as Bible translations, commentaries, books, lexicons etc, or their metadata,
         * requests relating to adding, removing or updating new content,
         * questions about such content or theology
 
-      should be directed to the appropriate resource providers, not this issue
-      tracker.
+      should be directed to the appropriate resource providers, not this issue tracker.
 
 - type: checkboxes
   id: i_have_read_and_i_agree
