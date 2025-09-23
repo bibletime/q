@@ -7,12 +7,10 @@ assignees: []
 body:
 
 - type: markdown
-  id: descriptive_notice
+  id: notice
   attributes:
     value: |
-      ## :warning: **Notice**
-
-      This form is for reporting bugs and technical issues specific to the BibleTime software itself. Issues that are **NOT** related to the software, such as:
+      :warning: This form is for reporting bugs and technical issues specific to the BibleTime software itself. Issues that are **NOT** related to the software, such as:
         * errors in works such as Bibles, commentaries, books, lexicons etc, or their metadata,
         * requests relating to adding, removing or updating new content,
         * questions about such content or theology

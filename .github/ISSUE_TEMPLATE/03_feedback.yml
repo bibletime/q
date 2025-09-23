@@ -7,12 +7,10 @@ assignees: []
 body:
 
 - type: markdown
-  id: descriptive_notice
+  id: notice
   attributes:
     value: |
-      ## :warning: **Notice**
-
-      This form is for feedback specifically about the BibleTime software itself. If your feedback relates to specific content such as Bibles, commentaries, books, lexicons, or their metadata or availability, please direct that to the appropriate content providers rather than this issue tracker.
+      :warning: This form is for feedback specifically about the BibleTime software itself. If your feedback relates to specific content such as Bibles, commentaries, books, lexicons, or their metadata or availability, please direct that to the appropriate content providers rather than this issue tracker.
 
 - type: checkboxes
   id: i_have_read_and_i_agree

@@ -7,12 +7,10 @@ assignees: []
 body:
 
 - type: markdown
-  id: descriptive_notice
+  id: notice
   attributes:
     value: |
-      ## :warning: **Notice**
-
-      This form is for questions specific to the BibleTime software. Any questions regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
+      :warning: This form is for questions specific to the BibleTime software. Any questions regarding specific works such as Bibles, commentaries, books, lexicons etc, their metadata or availability should be directed to the appropriate content providers, not this issue tracker.
 
 - type: checkboxes
   id: i_have_read_and_i_agree

@@ -7,24 +7,18 @@ assignees: []
 body:
 
 - type: markdown
-  id: descriptive_notice
+  id: notice
   attributes:
     value: |
-      ## :warning: **Notice**
-
-      This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
+      :warning: This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
         * feature requests for works such as Bibles, commentaries, books, lexicons etc, or their metadata,
         * requests relating to adding, removing or updating new content
 
       should be directed to the appropriate content providers, not this issue tracker.
 
-- type: markdown
-  id: feature_request_notice
-  attributes:
-    value: |
-      ## :information_source: Feature Request Notice
+      ----
 
-      Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future. 
+      :information_source: Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future. 
 
       We appreciate all feature suggestions and will consider them for future planning when resources allow. In the meantime, we encourage users to contribute code to help make desired features a reality. 
 
