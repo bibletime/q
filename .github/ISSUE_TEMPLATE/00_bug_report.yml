@@ -10,7 +10,7 @@ body:
   id: descriptive_notice
   attributes:
     value: |
-      :warning: **Please Read This Carefully Before Submitting an Issue**
+      ## :warning: **Please Read This Carefully Before Submitting an Issue**
 
       This form is for reporting bugs and technical issues specific to the BibleTime software itself. Issues that are **NOT** related to the software, such as:
         * errors in works such as Bible translations, commentaries, books, lexicons etc, or their metadata,

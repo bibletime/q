@@ -10,7 +10,7 @@ body:
   id: descriptive_notice
   attributes:
     value: |
-      :warning: **Please Read This Carefully Before Submitting an Issue** :warning:
+      ## :warning: **Please Read This Carefully Before Submitting an Enhancement Proposal**
 
       This form is for suggesting improvements specific to the BibleTime software itself. Reports that are **NOT** related to the software, such as:
         * feature requests for works such as Bible translations, commentaries, books, lexicons etc, or their metadata,
@@ -22,7 +22,7 @@ body:
   id: feature_request_notice
   attributes:
     value: |
-      :warning: Feature Request Notice
+      ## :information_source: Feature Request Notice
 
       Thank you for suggesting new features! However, please note that BibleTime's development is currently limited by our small team size, which makes it challenging to implement major new features in the near future. 
 
